@@ -1,0 +1,30 @@
+.container,
+.container-fluid {
+  width: 100%;
+  padding: 0 $padding-base;
+  margin: 0 auto;
+}
+
+@include media(mobile) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@include media(tablet) {
+  .container {
+    max-width: width 720px;
+  }
+}
+
+@include media(desktop-sm) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@include media(desktop-md) {
+  .container {
+    max-width: 1140px;
+  }
+}

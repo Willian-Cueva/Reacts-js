@@ -1,11 +1,12 @@
 //Typography
-$font-family: "Baloo Tamma 2", cursive !default;
-$font-color: $gray-900 !default;
-$font-size: 16px !default;
-$line-height: 1.5 !default;
+$font-family-base: "Baloo Tamma 2", cursive !default;
+$font-color-base: $gray-900 !default;
+$font-size-base: 16px !default;
+$line-height-base: 1.5 !default;
 $normalize-line-height: 24px !default;
 $normalize-vertical-rhythm: false !default;
 $unit-base: "rem" !default;
+$indent-amount: 40px !default;
 
 $font-weight-regular: 400 !default;
 $font-weight-semi-bold: 600 !default;

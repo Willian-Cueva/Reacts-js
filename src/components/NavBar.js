@@ -3,7 +3,6 @@ import Icon from "./Icon";
 import { Link } from "@reach/router";
 
 import logo from "../assets/statics/logo.png";
-import "../assets/styles/NavBar.scss";
 
 const NavBar = ({ navlinks }) => {
   //const [navOpen, setNavOpen] = useState(false);

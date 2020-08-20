@@ -1,6 +1,5 @@
 import React from "react";
 import icons from "./pluggins/icons";
-import "../assets/styles/Icon.scss";
 
 const Icon = ({ name, classes }) => {
   const iconRender = icons[name] || icons.default;

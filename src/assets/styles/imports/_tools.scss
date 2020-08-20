@@ -1,4 +1,6 @@
 //Functions
-
+@import "../tools/functions/normalize";
 //Mixins
+@import "../tools/mixings/normalize-rhythm";
+@import "../tools/mixings/normalize";
 @import "../tools/mixings/media_query";

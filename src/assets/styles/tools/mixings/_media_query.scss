@@ -1,45 +1,47 @@
-@if $breakpoint == mobile {
-  @media only screen and (min-width: 576px) {
-    @content;
-  }
-} @else if $breakpoint == tablet {
-  @media only screen and (min-width: 768px) {
-    @content;
-  }
-} @else if $breakpoint == desktop-s {
-  @media only screen and (min-width: 992px) {
-    @content;
-  }
-} @else if $breakpoint == desktop-m {
-  @media only screen and (min-width: 1200px) {
-    @content;
-  }
-} @else if $breakpoint == desktop-l {
-  @media only screen and (min-width: 1480px) {
-    @content;
-  }
-} @else if $breakpoint == desktop-xl {
-  @media only screen and (min-width: 1780px) {
-    @content;
-  }
-} @else if $breakpoint == mobile-only {
-  @media only screen and (max-width: 767.98px) {
-    @content;
-  }
-} @else if $breakpoint == tablet-p-only {
-  @media only screen and (min-width: 768px) and (max-width: 992px) and (orientation: portrait) {
-    @content;
-  }
-} @else if $breakpoint == tablet-l-only {
-  @media only screen and (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
-    @content;
-  }
-} @else if $breakpoint == desktop-s-only {
-  @media only screen and (min-width: 768px) and (max-width: 1200px) {
-    @content;
-  }
-} @else if $breakpoint == desktop-m-only {
-  @media only screen and (min-width: 1200px) and (max-width: 1480px) {
-    @content;
+@mixin media($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (min-width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-sm {
+    @media only screen and (min-width: $breakpoint-desktop-sm) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-md {
+    @media only screen and (min-width: $breakpoint-desktop-md) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-lg {
+    @media only screen and (min-width: $breakpoint-desktop-lg) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-xl {
+    @media only screen and (min-width: $breakpoint-desktop-xl) {
+      @content;
+    }
+  } @else if $breakpoint == mobile-only {
+    @media only screen and (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-p-only {
+    @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop-sm) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-l-only {
+    @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop-sm) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-sm-only {
+    @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop-md) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-md-only {
+    @media only screen and (min-width: $breakpoint-desktop-md) and (max-width: $breakpoint-desktop-lg) {
+      @content;
+    }
   }
 }

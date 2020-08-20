@@ -1,25 +1,24 @@
 $white: #fff !default;
-$gray-100:#e8e8e8 !default;
-$gray-200:#cdcdcd !default;
-$gray-300:#b4b4b4 !default;
-$gray-400:#9b9b9b !default;
-$gray-500:#838383 !default;
-$gray-600:#6a6a6a !default;
-$gray-700:#545454 !default;
-$gray-800:#3b3b3b !default;
-$gray-900:#212121 !default;
-$black:#000 !default;
+$gray-100: #e8e8e8 !default;
+$gray-200: #cdcdcd !default;
+$gray-300: #b4b4b4 !default;
+$gray-400: #9b9b9b !default;
+$gray-500: #838383 !default;
+$gray-600: #6a6a6a !default;
+$gray-700: #545454 !default;
+$gray-800: #3b3b3b !default;
+$gray-900: #212121 !default;
+$black: #000 !default;
 
 $color-primary: #f09895 !default;
 $color-dark: $black !default;
-$color-ligth: $white !default;
+$color-light: $white !default;
 $color-gray: $gray-100 !default;
 
 //colors Palette
-$palette:(
-    'primary': $color-primary,
-    'dark': $color-dark,
-    'ligth': $color-ligth,
-    'gray': $color-gray
-    
-)!default;
+$palette: (
+  "primary": $color-primary,
+  "dark": $color-dark,
+  "ligth": $color-light,
+  "gray": $color-gray,
+) !default;
