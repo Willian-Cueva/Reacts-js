@@ -1,0 +1,54 @@
+// Helper function for the normalize() mixin.
+@function _normalize-include($section, $exclude: null) {
+  // Initialize the global variables needed by this function.
+  @if not global_variable_exists(_normalize-include) {
+    $_normalize-include: () !global;
+    $_normalize-exclude: () !global;
+  }
+  // Since we are given 2 parameters, set the global variables.
+  @if $exclude != null {
+    $include: $section;
+    // Sass doesn't have static variables, so the work-around is to stuff these
+    // values into global variables so we can access them in future calls.
+    $_normalize-include: if(
+      type-of($include) == "list",
+      $include,
+      ($include)
+    ) !global;
+    $_normalize-exclude: if(
+      type-of($exclude) == "list",
+      $exclude,
+      ($exclude)
+    ) !global;
+    @return true;
+  }
+
+  // Check if $section is in the $include list.
+  @if index($_normalize-include, $section) {
+    @return true;
+  }
+  // If $include is set to (all), make sure $section is not in $exclude.
+  @else if not
+    index($_normalize-exclude, $section) and
+    index($_normalize-include, all)
+  {
+    @return true;
+  }
+  @return false;
+}
+
+
+@function normalize-rhythm($value, $relative-to: $font-size-base, $unit: $unit-base) {
+  @if unit($value) != px {
+    @error "The normalize vertical-rhythm module only supports px inputs. The typey library is better.";
+  }
+  @if $unit == rem {
+    @return ($value / $font-size-base) * 1rem;
+  }
+  @else if $unit == em {
+    @return ($value / $relative-to) * 1em;
+  }
+  @else { // $unit == px
+    @return $value;
+  }
+}

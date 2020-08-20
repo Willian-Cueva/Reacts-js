@@ -1,0 +1,55 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, if);
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    grid-column: span ($i);
+  }
+  @if $i <= 6 {
+    .gap-#{$i} {
+      grid-gap: $grid-gap-base * ($i * 0.5);
+    }
+  }
+}
+
+@include media(mobile) {
+  @for $i from 1 through $grid-columns {
+    .sm\:col-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+}
+
+@include media(tablet) {
+  @for $i from 1 through $grid-columns {
+    .md\:col-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+}
+
+@include media(desktop-sm) {
+  @for $i from 1 through $grid-columns {
+    .lg\:col-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+}
+
+@include media(desktop-md) {
+  @for $i from 1 through $grid-columns {
+    .xl\:col-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+}
+
+@include media(desktop-lg) {
+  @for $i from 1 through $grid-columns {
+    .xxl\:col-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+}
