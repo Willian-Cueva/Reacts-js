@@ -1,0 +1,113 @@
+.navbar {
+  height: 68px;
+  padding: 8px 0;
+}
+
+.navbar-container {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  grid-gap: 16px;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.braud-section {
+  width: 100%;
+
+  img {
+    height: 40px;
+    width: auto;
+  }
+  a {
+    display: block;
+  }
+}
+@media only screen and(max-width:767.98px) {
+  .navbar-navegator {
+    justify-self: end;
+  }
+}
+.navbar-menu {
+  justify-content: space-between;
+
+  @media only screen and(max-width:767.98px) {
+    width: 200px;
+    position: fixed;
+    top: 60px;
+    background-color: #fff;
+    left: 0;
+    bottom: 0;
+  }
+  @media only screen and(min-width:767.98px) {
+    display: flex;
+  }
+}
+.menu-links {
+  @media only screen and(min-width: 767.98px) {
+    display: flex;
+  }
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  a {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 16px;
+    transition: all 0.2s ease 0s;
+
+    &:hover {
+      background-color: rgba(#000000, 0.5);
+      color: white;
+    }
+  }
+}
+
+.navbar-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and(max-width: 767.98px) {
+    position: relative;
+    bottom: 36px;
+  }
+
+  a {
+    color: green;
+  }
+}
+
+.social-icons {
+  span {
+    padding: 8px;
+  }
+}
+
+.burger-buttom {
+  @media only screen and(min-width:767.98px) {
+    display: none;
+  }
+
+  button {
+    background-color: transparent;
+    padding: 12px;
+    height: 40px;
+    width: 40px;
+    border: none;
+    outline: transparent;
+    border-radius: 50%;
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(#e5e5e5, 0.8);
+    }
+  }
+}

@@ -1,64 +1,67 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: [".js", ".jsx"],
+  },
+  devServer: {
+    host: "192.168.1.110",
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
         },
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.html$/,
         use: {
-          loader: "html-loader"
-        }
+          loader: "html-loader",
+        },
       },
       {
         test: /\.(s*)css$/,
         use: [
           miniCssExtractPlugin.loader,
-          'css-loader',
+          "css-loader",
           {
             loader: "sass-loader",
             options: {
-              implementation: require('dart-sass')
+              implementation: require("dart-sass"),
             },
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.(png|gif|jpg)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'assets/[hash].[ext]'
-            }
-          }
-        ]
-      }
-    ]
+              name: "assets/[hash].[ext]",
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      filename: "index.html"
+      filename: "index.html",
     }),
     new miniCssExtractPlugin({
-      filename: 'assets/[name].css'
-    })
-  ]
-}
+      filename: "assets/[name].css",
+    }),
+  ],
+};
